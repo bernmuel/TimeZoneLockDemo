@@ -42,6 +42,8 @@ namespace TimeZoneLockDemo.ViewModels
         public void Refresh()
         {
             SetEventTime(DateTime.Now);
+
+            UpdateLocalTime();
         }
 
         private void SetEventTime(DateTime localTime)

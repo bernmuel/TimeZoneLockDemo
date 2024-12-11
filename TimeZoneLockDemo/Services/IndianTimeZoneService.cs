@@ -18,7 +18,11 @@ namespace TimeZoneLockDemo.Services
             {
                 dateTime = DateTime.SpecifyKind(dateTime, DateTimeKind.Utc);
             }
-            return TimeZoneInfo.ConvertTime(dateTime, TimeZoneInfo.Utc, _targetTimeZone);
+
+            //return TimeZoneInfo.ConvertTime(dateTime, TimeZoneInfo.Utc, _targetTimeZone);
+
+            var targetTime_forTesting = TimeZoneInfo.ConvertTimeFromUtc(dateTime, _targetTimeZone);
+            return targetTime_forTesting;
         }
 
         public string FormatDateTime(DateTime dateTime)
